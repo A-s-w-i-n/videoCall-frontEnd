@@ -9,7 +9,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import {
   PhoneBluetoothSpeaker,
 } from "@mui/icons-material";
-const socket = io("http://localhost:5000");
+const socket = io("https://videocall-backend-wqwv.onrender.com");
 // import global from 'global'
 import * as process from "process";
 global.process = process;
