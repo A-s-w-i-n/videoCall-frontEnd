@@ -9,7 +9,8 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import {
   PhoneBluetoothSpeaker,
 } from "@mui/icons-material";
-const socket = io("https://videocall-backend-wqwv.onrender.com");
+// const socket = io("https://videocall-backend-wqwv.onrender.com");
+const socket = io("http://localhost:5000");
 // import global from 'global'
 import * as process from "process";
 global.process = process;
@@ -78,7 +79,19 @@ function App() {
   const callUser = (id: any) => {
     try {
       console.log(id);
-      const peer = new Peer({ initiator: true, trickle: false, stream });
+      // const peer = new Peer({ initiator: true, trickle: false, stream });
+      const peer = new Peer({
+        initiator: true,
+        trickle: false,
+        stream,
+        config: {
+          iceServers: [
+            { urls: 'stun:stun.l.google.com:19302' },
+            { urls: 'stun:global.stun.twilio.com:3478?transport=udp' }
+            // Add TURN servers if needed
+          ]
+        }
+      });
       // const peer = new Peer({
       //   initiator: true,
       //   trickle: false,
