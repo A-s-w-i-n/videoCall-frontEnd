@@ -4,14 +4,10 @@ import { io } from "socket.io-client";
 import Peer from "simple-peer";
 import "global/window";
 import "global/document";
-import { Button, IconButton, TextField } from "@mui/material";
+import {  IconButton, TextField } from "@mui/material";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import {
-  AssignmentIndOutlined,
-  Phone,
-  PhoneAndroid,
   PhoneBluetoothSpeaker,
-  PhonelinkRounded,
 } from "@mui/icons-material";
 const socket = io("http://localhost:5000");
 // import global from 'global'
